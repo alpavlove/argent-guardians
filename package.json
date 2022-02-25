@@ -2,13 +2,16 @@
   "name": "argent",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://alpavlove.github.io/argent-guardians",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "generate-contracts-typings": "typechain --target ethers-v5 --always-generate-overloads --out-dir ./src/generated './src/abis/*.json'",
-    "postinstall": "yarn generate-contracts-typings"
+    "postinstall": "yarn generate-contracts-typings",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build"
   },
   "browserslist": {
     "production": [
@@ -55,6 +58,7 @@
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
     "eslint-plugin-standard": "^5.0.0",
+    "gh-pages": "^3.2.3",
     "prettier": "^2.5.1",
     "react-scripts": "5.0.0",
     "typechain": "^7.0.0",

@@ -11,12 +11,16 @@ const { ethereum } = window
 const uniswapTokenListUrl = 'https://gateway.ipfs.io/ipns/tokens.uniswap.org'
 const guardiansContractAddress = '0xFF5A7299ff6f0fbAad9b38906b77d08c0FBdc9A7'
 
-function useGuardiansContract() {
+function useGuardiansContract(walletAddress: string) {
   return useMemo(() => {
+    if (!walletAddress) {
+      return
+    }
+
     const provider = new ethers.providers.Web3Provider(ethereum)
-    const signer = provider.getSigner()
+    const signer = provider.getSigner(walletAddress)
     return Guardians__factory.connect(guardiansContractAddress, signer)
-  }, [])
+  }, [walletAddress])
 }
 
 export function useAvailableTokens(address: string) {
@@ -48,10 +52,14 @@ export function useAvailableTokens(address: string) {
 
 export function useGetGuardianCount(address: string) {
   const [guardiansCount, setGuardiansCount] = useState<number | undefined>()
-  const contract = useGuardiansContract()
+  const contract = useGuardiansContract(address)
 
   useEffect(() => {
     ;(async () => {
+      if (!contract) {
+        return
+      }
+
       const guardiansCountBigNumber = await contract.guardianCount(address)
       setGuardiansCount(guardiansCountBigNumber.toNumber())
     })()

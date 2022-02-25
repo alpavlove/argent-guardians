@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/argent-guardians/static/css/main.c8b285b5.css",
+    "main.js": "/argent-guardians/static/js/main.d477247b.js",
+    "static/js/787.1f165411.chunk.js": "/argent-guardians/static/js/787.1f165411.chunk.js",
+    "index.html": "/argent-guardians/index.html",
+    "main.c8b285b5.css.map": "/argent-guardians/static/css/main.c8b285b5.css.map",
+    "main.d477247b.js.map": "/argent-guardians/static/js/main.d477247b.js.map",
+    "787.1f165411.chunk.js.map": "/argent-guardians/static/js/787.1f165411.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c8b285b5.css",
+    "static/js/main.d477247b.js"
+  ]
+}

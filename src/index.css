@@ -1,13 +1,48 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Ubuntu', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+ul {
+  margin: 0;
+}
+
+.App {
+  padding: 2rem;
+}
+
+main {
+  padding: 2rem 0;
+}
+
+.WalletAddress-caption {
+  margin-bottom: 1rem;
+}
+
+.WalletAddress-controls {
+  display: flex;
+}
+
+.WalletAddress-input {
+  width: 20rem;
+}
+
+.WalletAddress-button {
+  width: 4rem;
+  margin-left: 1rem;
+}
+
+.Balance + .Balance {
+  margin-top: 2rem;
+}
+
+.Balance-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.Balance-value {
+  font-weight: 600;
 }
